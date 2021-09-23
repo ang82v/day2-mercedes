@@ -1,26 +1,18 @@
-const featureLink = document.querySelectorAll('.feature__link')
-const list = document.querySelectorAll('.feature-sub')
+const lists = document.querySelectorAll('.feature-sub')
+const btns = document.querySelectorAll('.feature__link')
 
-console.log(featureLink)
+btns.forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    btns.forEach((btnItem, idx) => {
+      if (btnItem === btn) {
+        console.log("Истина")
+        btnItem.classList.toggle('feature__link_active')
+        lists[idx].classList.toggle('hidden')
+      } else {
+        btnItem.classList.remove('feature__link_active')
+        lists[idx].classList.add('hidden')
+      }
 
-// for (let i = 0; i < featureLink.length; i++) {
-//   featureLink[i].addEventListener('click', () => console.log(featureLink[i]))
-// }
-
-featureLink.forEach((btnItem, index) => {
-  btnItem.addEventListener('click', () => {
-    featureLink.forEach((btnItem) => {
-      btnItem.classList.remove('feature__link_active')
     })
-
-    btnItem.classList.add('feature__link_active')
-
-    list.forEach(listItem => {
-      listItem.classList.add('hidden')
-    })
-
-    list[index].classList.remove('hidden')
   })
 })
-
-

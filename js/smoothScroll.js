@@ -2,8 +2,6 @@ const linksHead = document.querySelectorAll('.menu-list__link')
 const mainScrolld = document.querySelector('.main__scroll')
 
 const newArr = [...linksHead, mainScrolld]
-console.log(newArr)
-
 newArr.forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault()
